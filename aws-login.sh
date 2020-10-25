@@ -59,7 +59,9 @@ fi
 #printf "Argument region is %s\n" "$region"
 
 # reading properties
-file="./$script_name.properties"
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPT`
+file="$SCRIPTPATH/$script_name.properties"
 
 if [ -f "$file" ]
 then
